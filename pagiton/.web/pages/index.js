@@ -66,9 +66,11 @@ export default function Component() {
 </Heading>
   <SimpleGrid columns={[1, 2, 4]} spacing={`4`}>
   <Box>
-  <Link as={NextLink} href={`https://github.com/Caps-dev/Connect-4.git`} sx={{"margin": "0.5em", "textDecoration": "none", "_hover": {}, "color": "#f1f1f1"}}>
+  <Link as={NextLink} href={`https://github.com/Caps-dev/Connect-4.git`} isExternal={true} sx={{"margin": "0.5em", "textDecoration": "none", "_hover": {}, "color": "#f1f1f1"}}>
   <Box>
-  <ChakraImage src={`Connectfour.png_ssl=1.png`} sx={{"maxWidth": "300px"}}/>
+  <Center>
+  <ChakraImage src={`Connectfour.png_ssl=1.png`} sx={{"height": "180px"}}/>
+</Center>
   <Box sx={{"background": "#1a1a1a", "width": "100%", "marginBottom": "0.5em"}}>
   <VStack>
   <Heading>
@@ -85,17 +87,11 @@ export default function Component() {
 </Flex>
   <SimpleGrid columns={[4]} spacing={`2`} spacingY={`0.2em`} sx={{"padding": "0.5em"}}>
   <Box>
-  <ChakraImage src={`icon/java.svg`} sx={{"maxWidth": "40px"}}/>
+  <ChakraImage src={`icon/java.svg`} sx={{"height": "30px"}}/>
 </Box>
-  <Box>
-  <ChakraImage src={``} sx={{"maxWidth": "40px"}}/>
-</Box>
-  <Box>
-  <ChakraImage src={``} sx={{"maxWidth": "40px"}}/>
-</Box>
-  <Box>
-  <ChakraImage src={``} sx={{"maxWidth": "40px"}}/>
-</Box>
+  {``}
+  {``}
+  {``}
 </SimpleGrid>
 </VStack>
 </Box>
@@ -103,9 +99,11 @@ export default function Component() {
 </Link>
 </Box>
   <Box>
-  <Link as={NextLink} href={``} sx={{"margin": "0.5em", "textDecoration": "none", "_hover": {}, "color": "#f1f1f1"}}>
+  <Link as={NextLink} href={``} isExternal={true} sx={{"margin": "0.5em", "textDecoration": "none", "_hover": {}, "color": "#f1f1f1"}}>
   <Box>
-  <ChakraImage src={`spotify.png`} sx={{"maxWidth": "300px"}}/>
+  <Center>
+  <ChakraImage src={`spotify.png`} sx={{"height": "180px"}}/>
+</Center>
   <Box sx={{"background": "#1a1a1a", "width": "100%", "marginBottom": "0.5em"}}>
   <VStack>
   <Heading>
@@ -122,16 +120,16 @@ export default function Component() {
 </Flex>
   <SimpleGrid columns={[4]} spacing={`2`} spacingY={`0.2em`} sx={{"padding": "0.5em"}}>
   <Box>
-  <ChakraImage src={`excel.png`} sx={{"maxWidth": "40px"}}/>
+  <ChakraImage src={`excel.png`} sx={{"height": "30px"}}/>
 </Box>
   <Box>
-  <ChakraImage src={`power bi.png`} sx={{"maxWidth": "40px"}}/>
+  <ChakraImage src={`power bi.png`} sx={{"height": "30px"}}/>
 </Box>
   <Box>
-  <ChakraImage src={``} sx={{"maxWidth": "40px"}}/>
+  <ChakraImage src={`power bi.png`} sx={{"height": "30px"}}/>
 </Box>
   <Box>
-  <ChakraImage src={``} sx={{"maxWidth": "40px"}}/>
+  <ChakraImage src={`power bi.png`} sx={{"height": "30px"}}/>
 </Box>
 </SimpleGrid>
 </VStack>
