@@ -1,11 +1,11 @@
 
-/** @jsxImportSource @emotion/react */import { Fragment, useCallback, useContext } from "react"
+/** @jsxImportSource @emotion/react */import { Fragment, useCallback, useContext, useRef } from "react"
 import { Fragment_39a4cee5eee02a4bdb3bcce3c3d0b404 } from "/utils/stateful_components"
 import { Avatar, Box, Button, Center, Flex, Heading, HStack, Image as ChakraImage, Link, ListItem, SimpleGrid, Spacer, Text, UnorderedList, VStack } from "@chakra-ui/react"
 import "focus-visible/dist/focus-visible"
 import NextLink from "next/link"
 import { EventLoopContext } from "/utils/context"
-import { Event } from "/utils/state"
+import { Event, refs } from "/utils/state"
 import NextHead from "next/head"
 
 
@@ -23,6 +23,8 @@ export function Button_6f803a3869a4ec0cfb34f215ec8c35e3 () {
 }
 
 export default function Component() {
+  const ref_proyectos = useRef(null); refs['ref_proyectos'] = ref_proyectos;
+  const ref_about = useRef(null); refs['ref_about'] = ref_about;
 
   return (
     <Fragment>
@@ -34,11 +36,11 @@ export default function Component() {
   <Link as={NextLink} href={``} sx={{"marginInlineEnd": "2px", "textDecoration": "none", "_hover": {}, "color": "#f1f1f1"}}>
   {`Inicio`}
 </Link>
-  <Link as={NextLink} href={`about`} sx={{"marginInlineEnd": "2px", "textDecoration": "none", "_hover": {}, "color": "#f1f1f1"}}>
-  {`Sobre mi`}
-</Link>
-  <Link as={``} sx={{"marginInlineEnd": "2px", "textDecoration": "none", "_hover": {}, "color": "#f1f1f1"}}>
+  <Link as={NextLink} href={`#proyectos`} sx={{"marginInlineEnd": "2px", "textDecoration": "none", "_hover": {}, "color": "#f1f1f1"}}>
   {`Proyectos`}
+</Link>
+  <Link as={NextLink} href={`#about`} sx={{"marginInlineEnd": "2px", "textDecoration": "none", "_hover": {}, "color": "#f1f1f1"}}>
+  {`Sobre mi`}
 </Link>
 </HStack>
   <Center>
@@ -60,7 +62,7 @@ export default function Component() {
   <Avatar name={`Allan Picado`} size={`full`} src={`yo.jpeg`} sx={{"width": "100%"}}/>
 </SimpleGrid>
 </Center>
-  <VStack sx={{"backgroundColor": "#1a1a1a", "padding": "20px"}}>
+  <VStack id={`proyectos`} ref={ref_proyectos} sx={{"backgroundColor": "#1a1a1a", "padding": "20px"}}>
   <Heading>
   {`Proyectos descatados`}
 </Heading>
@@ -144,14 +146,15 @@ export default function Component() {
 </Button>
 </Link>
 </VStack>
-  <VStack>
-  <Box sx={{"marginBlock": "2em", "backgroundColor": "#1a1a1a", "width": "100%", "paddingInline": "4em", "paddingBlock": "2em"}}>
+  <VStack id={`about`} ref={ref_about}>
+  <Box sx={{"paddingInline": "2em", "marginBlock": "2em", "backgroundColor": "#1a1a1a", "width": "100%", "paddingBlock": "2em", "display": ["block", "none", "none", "none"]}}>
+  <Box>
   <Center>
   <VStack spacing={`2em`}>
   <Heading>
   {`Sobre mi`}
 </Heading>
-  <Box>
+  <Box sx={{"maxWidth": "600px"}}>
   <VStack spacing={`1.5em`}>
   <Text sx={{"color": "#f1f1f1"}}>
   {`Desde que obtuve mi título como Técnico Medio en Informática en Redes en el Colegio, mi pasión por la tecnología ha sido innegable. Mi formación incluyó una práctica profesional en la empresa Centenario Internacional, donde pude aplicar mis conocimientos en un entorno real y adquirir una valiosa perspectiva sobre el mundo laboral.`}
@@ -170,11 +173,40 @@ export default function Component() {
 </VStack>
 </Center>
 </Box>
-  <VStack sx={{"backgroundColor": "#1a1a1a", "margin": "1em"}}>
+</Box>
+  <Box sx={{"paddingInline": "4em", "marginBlock": "2em", "backgroundColor": "#1a1a1a", "width": "100%", "paddingBlock": "2em", "display": ["none", "block", "block", "block"]}}>
+  <Box>
+  <Center>
+  <VStack spacing={`2em`}>
   <Heading>
+  {`Sobre mi`}
+</Heading>
+  <Box sx={{"maxWidth": "600px"}}>
+  <VStack spacing={`1.5em`}>
+  <Text sx={{"color": "#f1f1f1"}}>
+  {`Desde que obtuve mi título como Técnico Medio en Informática en Redes en el Colegio, mi pasión por la tecnología ha sido innegable. Mi formación incluyó una práctica profesional en la empresa Centenario Internacional, donde pude aplicar mis conocimientos en un entorno real y adquirir una valiosa perspectiva sobre el mundo laboral.`}
+</Text>
+  <Text sx={{"color": "#f1f1f1"}}>
+  {`Mi recorrido académico continuó al ingresar a la Universidad de Costa Rica en 2023 para estudiar Ingeniería de Software, un emocionante paso que amplió mis horizontes educativos. Simultáneamente, di inicio a mi carrera profesional en el campo tecnológico, lo que ha enriquecido mi comprensión práctica y teórica.`}
+</Text>
+  <Text sx={{"color": "#f1f1f1"}}>
+  {`Además, incursioné en el análisis de datos a través de la plataforma Platzi, explorando cómo estos datos pueden proporcionar ideas valiosas. Cada proyecto en mi portafolio refleja mi dedicación por fusionar la teoría académica con la aplicación práctica, buscando soluciones creativas y eficientes para los desafíos tecnológicos del mundo real.`}
+</Text>
+  <Text sx={{"color": "#f1f1f1"}}>
+  {`Empecé a trabajar en el campo laboral en el transcurso de este último año, ampliando mi experiencia y habilidades más allá del ámbito académico. Cada día, mi entusiasmo crece por las oportunidades que se presentan y las colaboraciones futuras que podré formar. Espero que encuentres inspiración en mi trabajo y que podamos compartir un emocionante viaje hacia el futuro tecnológico juntos.`}
+</Text>
+</VStack>
+</Box>
+</VStack>
+</Center>
+</Box>
+</Box>
+  <VStack sx={{"backgroundColor": "#1a1a1a", "margin": "1em", "width": "100%", "backgorundColor": "#1a1a1a"}}>
+  <Heading sx={{"marginTop": "0.5em"}}>
   {`Experiencia`}
 </Heading>
-  <UnorderedList sx={{"padding": "2em"}}>
+  <Box sx={{"paddingInline": "1em", "maxWidth": "600px", "display": ["block", "none", "none", "none"]}}>
+  <UnorderedList>
   <ListItem sx={{"margin": "1em", "fontSize": "1em"}}>
   <VStack alignItems={`start`}>
   <Text as={`b`} sx={{"fontSize": "0.5em", "color": "#f1f1f1"}}>
@@ -202,9 +234,41 @@ export default function Component() {
 </VStack>
 </ListItem>
 </UnorderedList>
+</Box>
+  <Box sx={{"paddingInline": "2em", "maxWidth": "600px", "display": ["none", "block", "block", "block"]}}>
+  <UnorderedList>
+  <ListItem sx={{"margin": "1em", "fontSize": "1em"}}>
+  <VStack alignItems={`start`}>
+  <Text as={`b`} sx={{"fontSize": "0.5em", "color": "#f1f1f1"}}>
+  {`Nov 2023 - Actualmente`}
+</Text>
+  <Heading size={`lg`} sx={{"color": "#5ced73"}}>
+  {`Tecnico - One Way Technologies`}
+</Heading>
+  <Text sx={{"color": "#f1f1f1"}}>
+  {`Como Técnico, me especializo en monitorear, montar y mantener equipos en redes. Construyo racks con dispositivos Huawei y xfusion, trabajando en equipos pequeños y realizando mantenimientos. Utilizo herramientas específicas para llevar a cabo estas tareas. Mi responsabilidad principal es el mantenimiento de equipos y redes, interactuando directamente con los clientes para garantizar su satisfacción durante estos procesos.`}
+</Text>
+</VStack>
+</ListItem>
+  <ListItem sx={{"margin": "1em", "fontSize": "1em"}}>
+  <VStack alignItems={`start`}>
+  <Text as={`b`} sx={{"fontSize": "0.5em", "color": "#f1f1f1"}}>
+  {`oct, 2022 - dic 2022`}
+</Text>
+  <Heading size={`lg`} sx={{"color": "#5ced73"}}>
+  {`Practicante de Soporte Técnico - Centenario Internacional`}
+</Heading>
+  <Text sx={{"color": "#f1f1f1"}}>
+  {`Durante mi tiempo en la empresa, proporcioné soporte completo: resolví problemas de impresoras, gestioné cuentas en Active Directory, configuré sistemas de telefonía IP y generé informes con Power BI. Además, apoyé las operaciones con un sistema ERP y resolví problemas de conectividad e Internet. Esta experiencia fue crucial para mi desarrollo en tecnología.`}
+</Text>
+</VStack>
+</ListItem>
+</UnorderedList>
+</Box>
 </VStack>
   <Center>
-  <HStack spacing={`4em`} sx={{"marginBlock": "4em"}}>
+  <SimpleGrid columns={[1, 2, 3]} spacingY={`2em`} sx={{"marginBlock": "4em"}}>
+  <Box>
   <VStack>
   <ChakraImage src={`data.png`} sx={{"width": "150px"}}/>
   <Heading>
@@ -214,6 +278,8 @@ export default function Component() {
   {`| Excel | Power bi | Tableu | Python | SQL |`}
 </Text>
 </VStack>
+</Box>
+  <Box>
   <VStack>
   <ChakraImage src={`wifi.png`} sx={{"width": "150px"}}/>
   <Heading>
@@ -223,6 +289,8 @@ export default function Component() {
   {`| CCNA | LINUX | HCIA |`}
 </Text>
 </VStack>
+</Box>
+  <Box sx={{"spacing": "4em"}}>
   <VStack>
   <ChakraImage src={`ing.png`} sx={{"width": "80px"}}/>
   <Heading>
@@ -232,7 +300,8 @@ export default function Component() {
   {`| Python | Java | C++ | HTML | CSS |`}
 </Text>
 </VStack>
-</HStack>
+</Box>
+</SimpleGrid>
 </Center>
 </VStack>
   <Center sx={{"margin": "2em", "backgroundColor": "#1a1a1a", "width": "100%", "padding": "1.5em"}}>
@@ -244,7 +313,7 @@ export default function Component() {
   <Center>
   <HStack spacing={`4em`}>
   <VStack>
-  <Text sx={{"color": "#f1f1f1"}}>
+  <Text sx={{"marginBottom": "14px", "color": "#f1f1f1"}}>
   {`Email`}
 </Text>
   <Text sx={{"color": "#f1f1f1"}}>
@@ -270,10 +339,6 @@ export default function Component() {
   <Text sx={{"color": "#f1f1f1"}}>
   {`Portafolio 2024`}
 </Text>
-  <ChakraImage src={`icon/email.svg`} sx={{"width": "20px", "height": "20px"}}/>
-  <Link as={``} sx={{"textDecoration": "none", "_hover": {}, "color": "#f1f1f1"}}>
-  {`campisa26@gmail.com`}
-</Link>
   <ChakraImage src={`icon/location.svg`} sx={{"width": "20px", "height": "20px"}}/>
   <Text sx={{"color": "#f1f1f1"}}>
   {`San Jose, Costa Rica`}

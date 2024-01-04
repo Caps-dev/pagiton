@@ -12,4 +12,4 @@ def projects_important_grid() -> rx.component:
 
         columns=[1, 2, 4],
         spacing="4",
-    ), rx.link(rx.button("Ver más", background=color.forthy.value), href="https://github.com/Caps-dev?tab=repositories", is_external=True), background_color=color.secondary.value, padding="20px")
+    ), rx.link(rx.button("Ver más", background=color.forthy.value), href="https://github.com/Caps-dev?tab=repositories", is_external=True), background_color=color.secondary.value, padding="20px", id="proyectos")
