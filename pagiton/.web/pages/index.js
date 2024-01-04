@@ -23,8 +23,8 @@ export function Button_6f803a3869a4ec0cfb34f215ec8c35e3 () {
 }
 
 export default function Component() {
-  const ref_about = useRef(null); refs['ref_about'] = ref_about;
   const ref_proyectos = useRef(null); refs['ref_proyectos'] = ref_proyectos;
+  const ref_about = useRef(null); refs['ref_about'] = ref_about;
 
   return (
     <Fragment>
