@@ -13,10 +13,6 @@ from pagiton.views.about.about import about
 from pagiton.views.projects.projects_grid import projects_important_grid
 
 
-docs_url = "https://reflex.dev/docs/getting-started/introduction"
-filename = f"{config.app_name}/{config.app_name}.py"
-
-
 class State(rx.State):
     """The app state."""
 
